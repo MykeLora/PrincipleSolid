@@ -12,3 +12,4 @@ C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.pdb
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.genruntimeconfig.cache
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\ref\SOLID-Design-Principles.dll
+C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.sourcelink.json

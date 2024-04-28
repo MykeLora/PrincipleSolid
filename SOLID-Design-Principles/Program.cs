@@ -1,2 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿internal class Program
+{
+   
+    private static void Main(string[] args)
+    {
+        
+        var logger = new Logger();
+
+        var mailSender = new MailSender();
+
+        var invoice = new Invoice(logger, mailSender);
+
+        invoice.AddInvoice();
+        invoice.DeleteInvoice();
+    }
+}

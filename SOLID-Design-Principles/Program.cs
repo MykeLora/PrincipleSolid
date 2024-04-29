@@ -3,13 +3,14 @@
    
     private static void Main(string[] args)
     {
-        
-        BankAccount myke = new BankAccount(162316);
-        myke.Deposit(4500);
-        myke.Withdraw(1000);
+        Student Maycol = new Student {Name = "Maycol"};
+        Maycol.EnrollCourse("Programación II");
+        Maycol.AssignGrade("Programación II", 91);
 
-        StatementPrinter print = new StatementPrinter();
-        print.Print(myke);
+        GPACalculator gpaCalc = new GPACalculator();
+        TranscriptGenerator transcript = new TranscriptGenerator(gpaCalc);
+        transcript.PrintTranscript(Maycol);
+        
         Console.ReadKey();
     }
 } 

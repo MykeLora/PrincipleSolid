@@ -4,13 +4,12 @@
     private static void Main(string[] args)
     {
         
-        var logger = new Logger();
+        BankAccount myke = new BankAccount(162316);
+        myke.Deposit(4500);
+        myke.Withdraw(1000);
 
-        var mailSender = new MailSender();
-
-        var invoice = new Invoice(logger, mailSender);
-
-        invoice.AddInvoice();
-        invoice.DeleteInvoice();
+        StatementPrinter print = new StatementPrinter();
+        print.Print(myke);
+        Console.ReadKey();
     }
-}
+} 

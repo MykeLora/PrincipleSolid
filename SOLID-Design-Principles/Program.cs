@@ -3,16 +3,19 @@
    
     private static void Main(string[] args)
     {
-        Employee Alexis = new Employee {Name = "Alexis", HoursWorked = 200, Pay = 8000};
-        EmployeeReport report = new EmployeeReport(Alexis);
+        LibraryBook book = new LibraryBook
+        {
+            Title = "Clean Arquitecture",
+            Author = "Robert c.Marti",
+            ISBN = 14563268
+        };
 
-        string content = report.GenerateReportContent();
+        LibraryLogger logger = new LibraryLogger();
+        book.AddBook();
+        logger.Log($"Added {book.Title} by {book.Author}");
 
-        ReportPrinter printer = new ReportPrinter();
-        printer.Print(content);
-
-        ReportPDFSaver pdfSaver = new ReportPDFSaver();
-        pdfSaver.SaveAsPDFSaver(content, "reportSaved.pdf");
+        book.DeleteBook();
+        logger.Log($"Delete {book.Title} by {book.Author}");
         Console.ReadKey();
     }
 } 

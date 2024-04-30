@@ -3,14 +3,16 @@
    
     private static void Main(string[] args)
     {
-        Student Maycol = new Student {Name = "Maycol"};
-        Maycol.EnrollCourse("Programación II");
-        Maycol.AssignGrade("Programación II", 91);
+        Employee Alexis = new Employee {Name = "Alexis", HoursWorked = 200, Pay = 8000};
+        EmployeeReport report = new EmployeeReport(Alexis);
 
-        GPACalculator gpaCalc = new GPACalculator();
-        TranscriptGenerator transcript = new TranscriptGenerator(gpaCalc);
-        transcript.PrintTranscript(Maycol);
-        
+        string content = report.GenerateReportContent();
+
+        ReportPrinter printer = new ReportPrinter();
+        printer.Print(content);
+
+        ReportPDFSaver pdfSaver = new ReportPDFSaver();
+        pdfSaver.SaveAsPDFSaver(content, "reportSaved.pdf");
         Console.ReadKey();
     }
 } 

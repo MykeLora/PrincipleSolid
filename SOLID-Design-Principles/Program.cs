@@ -3,19 +3,17 @@
    
     private static void Main(string[] args)
     {
-        LibraryBook book = new LibraryBook
+        EmployeeSalary maycolSalary = new EmployeeSalary
         {
-            Title = "Clean Arquitecture",
-            Author = "Robert c.Marti",
-            ISBN = 14563268
+            EmployeeName = "Maycol",
+            BasicSalary = 25500,
+            Bonus = 1000
         };
 
-        LibraryLogger logger = new LibraryLogger();
-        book.AddBook();
-        logger.Log($"Added {book.Title} by {book.Author}");
+        double totalSalary = maycolSalary.CalculateTotalSalary();
 
-        book.DeleteBook();
-        logger.Log($"Delete {book.Title} by {book.Author}");
+        SalaryDatabaseHandler dbHandler = new SalaryDatabaseHandler();
+            dbHandler.SaveSalaryDetails(maycolSalary, totalSalary);
         Console.ReadKey();
     }
 } 

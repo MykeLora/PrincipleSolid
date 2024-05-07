@@ -3,19 +3,17 @@
 internal class Program
 {
    
-    private static void Main(string[] args)
+    public static void Main()
     {
-        Event concert = new Event {
-            Name = "Rap Concert",
-            Date = DateTime.Now.AddDays(30),
-            Location = "Santo domingo"
-        };
-
-        EventStorage storage = new EventStorage();
-        storage.SaveEvent(concert);
-
-        EventPromoter promoter = new EventPromoter();
-        promoter.ShareOnSocialMedia(concert);
+        Article newArticle = new Article
+            {
+                Title = "The Benefits of SRP",
+                Content = "A long content about the Single Responsibility Principle..."
+            };
+            ArticleDatabaseManager dbManager = new ArticleDatabaseManager();
+            dbManager.SaveArticle(newArticle);
+            ArticleSummarizer summarizer = new ArticleSummarizer();
+            string summary = summarizer.GenerateSummary(newArticle);
           
         Console.ReadKey();
     }

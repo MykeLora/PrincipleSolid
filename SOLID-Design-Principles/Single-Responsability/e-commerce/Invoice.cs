@@ -1,4 +1,4 @@
-public class Invoice
+public class Invoices
 {
     private readonly ILogger logger;
     private readonly MailSender mailSender;
@@ -6,7 +6,7 @@ public class Invoice
     public long InvAmount{ get; set; }
     public DateTime InvDate{ get; set;}
 
-     public Invoice(ILogger logger, MailSender mailSender)
+     public Invoices(ILogger logger, MailSender mailSender)
     {
         this.logger = logger;
         this.mailSender = mailSender;

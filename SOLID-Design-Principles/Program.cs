@@ -1,24 +1,24 @@
 ﻿using System;
-
-
 internal class Program
 {
     private static void Main(string[] args)
     {
-        HotelRoom hotel = new HotelRoom
-        {
-            RoomNumber = 120
-        };
+        Console.WriteLine("Invoice Amount: 40000");
 
-        RoomBookingManager manager = new RoomBookingManager();
+        BaseInvoice FInvoice = new FinalInvoice();
+        
+        double FInvoiceAmount = FInvoice.GetInvoiceDiscount(40000);
+        Console.WriteLine($"Final Invoive : {FInvoiceAmount}");
 
-        bool isBooked = manager.BookRoom(hotel);
+        BaseInvoice PInvoice = new ProposedInvoice();
 
-        if (isBooked)
-        {
-            InvoiceGenerator invoiceGen = new InvoiceGenerator();
+        double PInvoiceAmount = PInvoice.GetInvoiceDiscount(10000);
+        Console.WriteLine($"Proposed Invoive : {PInvoiceAmount}");
 
-            string invoice = invoiceGen.GenerateInvoice(hotel);
-        }
+        BaseInvoice RInvoice = new RecurringInvoice();
+        double RInvoiceAmount = RInvoice.GetInvoiceDiscount(10000);
+        Console.WriteLine($"Recurring Invoive : {RInvoiceAmount}");
+
+        Console.ReadKey();
     }
 }

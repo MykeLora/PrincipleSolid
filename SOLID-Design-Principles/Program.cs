@@ -3,14 +3,19 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var emaiChannel = new EmailNotification();
-        var sender = new NotificationSender(emaiChannel);
-        sender.SendNotification("Hello by this via Email!");
+        var filelogger = new FileLogger();
+        var logger = new Recorder(filelogger);
+        logger.LogMesage("This is a file log.");
 
-        var smsChannel = new SMSNotification();
-        sender = new NotificationSender(smsChannel);
-        sender.SendNotification("Hello by this via SMS!");
-        
+        var dbLogger = new DatabaseLogger();
+        logger = new Recorder(dbLogger);
+        logger.LogMesage("This is a database log.");
+
+        var cloudLogger = new CloudStoredLogger();
+        logger = new Recorder(cloudLogger);
+        logger.LogMesage("This is a cloud log.");
+
+
         Console.ReadKey();
     }
 }

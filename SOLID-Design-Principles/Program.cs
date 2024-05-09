@@ -3,22 +3,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Invoice Amount: 40000");
+        var emaiChannel = new EmailNotification();
+        var sender = new NotificationSender(emaiChannel);
+        sender.SendNotification("Hello by this via Email!");
 
-        BaseInvoice FInvoice = new FinalInvoice();
+        var smsChannel = new SMSNotification();
+        sender = new NotificationSender(smsChannel);
+        sender.SendNotification("Hello by this via SMS!");
         
-        double FInvoiceAmount = FInvoice.GetInvoiceDiscount(40000);
-        Console.WriteLine($"Final Invoive : {FInvoiceAmount}");
-
-        BaseInvoice PInvoice = new ProposedInvoice();
-
-        double PInvoiceAmount = PInvoice.GetInvoiceDiscount(10000);
-        Console.WriteLine($"Proposed Invoive : {PInvoiceAmount}");
-
-        BaseInvoice RInvoice = new RecurringInvoice();
-        double RInvoiceAmount = RInvoice.GetInvoiceDiscount(10000);
-        Console.WriteLine($"Recurring Invoive : {RInvoiceAmount}");
-
         Console.ReadKey();
     }
 }

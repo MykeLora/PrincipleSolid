@@ -3,18 +3,16 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var filelogger = new FileLogger();
-        var logger = new Recorder(filelogger);
-        logger.LogMesage("This is a file log.");
+        var electronicsProduct = new Product
+        {
+            Name = "Laptop",
+            Price = 24000,
+            category = ProductCategory.Electronics
 
-        var dbLogger = new DatabaseLogger();
-        logger = new Recorder(dbLogger);
-        logger.LogMesage("This is a database log.");
+        };
 
-        var cloudLogger = new CloudStoredLogger();
-        logger = new Recorder(cloudLogger);
-        logger.LogMesage("This is a cloud log.");
-
+        var taxCalculator = new TaxCalculator(new ElectronicsTaxStrategy());
+        Console.WriteLine($"Tax for {electronicsProduct.Name}: ${taxCalculator.CalculateTax(electronicsProduct)}");
 
         Console.ReadKey();
     }

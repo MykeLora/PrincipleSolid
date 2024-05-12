@@ -3,17 +3,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var electronicsProduct = new Product
-        {
-            Name = "Laptop",
-            Price = 24000,
-            category = ProductCategory.Electronics
+        var pdfGenerator = new PDFReportGenerator();
+        var service = new ReportGenerationService(pdfGenerator);
+        service.GenerateReport("PDF Report Data");
 
-        };
-
-        var taxCalculator = new TaxCalculator(new ElectronicsTaxStrategy());
-        Console.WriteLine($"Tax for {electronicsProduct.Name}: ${taxCalculator.CalculateTax(electronicsProduct)}");
-
+        var csvGenerator = new CSVReportGenerator();
+        service = new ReportGenerationService(csvGenerator);
+        service.GenerateReport("CSV Report Data");
+            
         Console.ReadKey();
     }
 }

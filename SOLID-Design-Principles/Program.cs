@@ -3,14 +3,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var pdfGenerator = new PDFReportGenerator();
-        var service = new ReportGenerationService(pdfGenerator);
-        service.GenerateReport("PDF Report Data");
+        var creditCardPayment = new CreditCarPayment();
+        var handler = new PaymentHandler(creditCardPayment);
+        handler.ExecutePayment(125.56);
 
-        var csvGenerator = new CSVReportGenerator();
-        service = new ReportGenerationService(csvGenerator);
-        service.GenerateReport("CSV Report Data");
-            
+        var paypalPayment = new PayPalPyment();
+        handler = new PaymentHandler(paypalPayment);
+        handler.ExecutePayment(150.85);
+
         Console.ReadKey();
     }
 }

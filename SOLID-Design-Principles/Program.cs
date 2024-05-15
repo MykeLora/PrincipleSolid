@@ -3,14 +3,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var creditCardPayment = new CreditCarPayment();
-        var handler = new PaymentHandler(creditCardPayment);
-        handler.ExecutePayment(125.56);
+        var carService = new CarService();
+        var center = new ServiceCenter(carService);
+        center.ServiceVehicle("Sedan");
 
-        var paypalPayment = new PayPalPyment();
-        handler = new PaymentHandler(paypalPayment);
-        handler.ExecutePayment(150.85);
-
+        var truckService = new TruckService();
+        center = new ServiceCenter(truckService);
+        center.ServiceVehicle("18-Wheeler");
+        
         Console.ReadKey();
     }
 }

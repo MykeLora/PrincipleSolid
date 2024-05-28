@@ -13,7 +13,6 @@ public class Invoices
     }
 
     public void AddInvoice()
-
     {
         try
         {

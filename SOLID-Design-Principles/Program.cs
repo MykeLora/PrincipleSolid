@@ -3,22 +3,17 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var products = new List<Producto>
-        {
-            new Producto { Name = "Red Shirt", Color = "Red", Id = 10 },
-            new Producto { Name = "Blue Pants", Color = "Blue", Id = 20 },
-            new Producto { Name = "Computer", Color = "Black", Id = 12, Price = 25.69 },
-            new Producto { Name = "Phone", Color = "Orange", Id = 32, Price = 12.43 },
-            new Producto { Name = "KeyBoar", Color = "blue", Id = 10 },
-            new Producto { Name = "Blue Pants", Color = "Blue", Id = 20 },
-            
+        var mcQuestion = new Question{
+            Title = "Choose a color",
+            type = QuestionType.MultipleChoice
         };
         
-        var filter = new ProductFilter();
-        foreach (var product in filter.Filter(products, new NameSpecification("Phone")))
-        {
-            Console.WriteLine($"- {product.Name} \n {product.Color} \n  {product.Price}");
-        }
+        var renderer = new SurveyRenderer(new MultipleChoiceRenderer());
+        renderer.RenderQuestion(mcQuestion);
+
+        var tfQuestion = new Question { Title = "The sky is blue", type = QuestionType.TrueFalse };
+        renderer = new SurveyRenderer(new TrueFalseRenderer());
+        renderer.RenderQuestion(tfQuestion);
             
         Console.ReadKey();
     }

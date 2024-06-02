@@ -3,18 +3,14 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var mcQuestion = new Question{
-            Title = "Choose a color",
-            type = QuestionType.MultipleChoice
-        };
-        
-        var renderer = new SurveyRenderer(new MultipleChoiceRenderer());
-        renderer.RenderQuestion(mcQuestion);
+        var fullTime = new FullTimeEmployee { HourlyRate = 25 };
+        var salaryCalculator = new SalaryCalculator();
 
-        var tfQuestion = new Question { Title = "The sky is blue", type = QuestionType.TrueFalse };
-        renderer = new SurveyRenderer(new TrueFalseRenderer());
-        renderer.RenderQuestion(tfQuestion);
-            
+        Console.WriteLine($"Full-Time Employee Salary: ${salaryCalculator.CalculateSalary(fullTime)}");
+        var intern = new Intern { HourlyRate = 20, HoursWorked = 80 };
+        
+        Console.WriteLine($"Intern Salary: ${salaryCalculator.CalculateSalary(intern)}");
+
         Console.ReadKey();
     }
 }

@@ -9,6 +9,10 @@ public class BankAccount
         AccountNumber = accountNumber;
     }
 
+    public BankAccount()
+    {
+    }
+
     public void Deposit(double amount)
     {
         Balance += amount;

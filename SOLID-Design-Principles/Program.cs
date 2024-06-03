@@ -3,15 +3,25 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        IFruit fruit = new Orange();
-        Console.WriteLine($"Color of Orange: {fruit.GetColor()}");
+        BankAccounts savingsAccount = new SavingsAccount("SA1243", 1000m, 0.03m);
+        BankAccounts currentAccount = new CurrentAccount("CA564", 1300m, 700m);
 
-        fruit = new Apple();
-        Console.WriteLine($"Color of Apple: {fruit.GetColor()}");
+        Console.WriteLine("Before Transactions: ");
+        PrintAccountDetails(savingsAccount);
+        PrintAccountDetails(currentAccount);
 
-        fruit = new Banana();
-        Console.WriteLine($"Color of Banana: {fruit.GetColor()}");
+        savingsAccount.Withdraw(800m);
+        currentAccount.Withdraw(2500m);
+
+        Console.WriteLine("\nAfter Transactions: ");
+        PrintAccountDetails(savingsAccount);
+        PrintAccountDetails(currentAccount);
 
         Console.ReadKey();
+    }
+
+    static void PrintAccountDetails(BankAccounts account)
+    {
+        Console.WriteLine($"Account Number: {account.AccountNumber}, Balance: {account.Balance}");
     }
 }

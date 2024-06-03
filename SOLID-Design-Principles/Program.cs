@@ -1,15 +1,16 @@
 ﻿using System;
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
-        var fullTime = new FullTimeEmployee { HourlyRate = 25 };
-        var salaryCalculator = new SalaryCalculator();
+        IFruit fruit = new Orange();
+        Console.WriteLine($"Color of Orange: {fruit.GetColor()}");
 
-        Console.WriteLine($"Full-Time Employee Salary: ${salaryCalculator.CalculateSalary(fullTime)}");
-        var intern = new Intern { HourlyRate = 20, HoursWorked = 80 };
-        
-        Console.WriteLine($"Intern Salary: ${salaryCalculator.CalculateSalary(intern)}");
+        fruit = new Apple();
+        Console.WriteLine($"Color of Apple: {fruit.GetColor()}");
+
+        fruit = new Banana();
+        Console.WriteLine($"Color of Banana: {fruit.GetColor()}");
 
         Console.ReadKey();
     }

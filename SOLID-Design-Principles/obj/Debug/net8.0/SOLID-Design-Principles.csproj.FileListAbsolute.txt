@@ -7,9 +7,9 @@ C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.AssemblyInfoInputs.cache
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.AssemblyInfo.cs
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.csproj.CoreCompileInputs.cache
+C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.sourcelink.json
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.dll
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\refint\SOLID-Design-Principles.dll
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.pdb
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.genruntimeconfig.cache
 C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\ref\SOLID-Design-Principles.dll
-C:\Users\maycol\Desktop\PrincipleSolid\SOLID-Design-Principles\obj\Debug\net8.0\SOLID-Design-Principles.sourcelink.json

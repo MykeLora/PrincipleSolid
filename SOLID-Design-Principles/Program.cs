@@ -3,13 +3,20 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        var rect = new Rectangle{ Width = 2, Height = 3};
-        rect.GetArea();
-        rect.ChangeDimensions(rect, 4, 5);
+        Console.WriteLine("RegularAccount:");
+        var RegularAccount = new RegularAccount();
 
+        RegularAccount.Deposit(1000);
+        RegularAccount.Deposit(300);
+        RegularAccount.Withdraw(800);
+        RegularAccount.Withdraw(900);
 
-        var square = new Square{ Slide = 2};
-        square.GetArea();
+        Console.WriteLine("\nFixedTermDepositAccount:");
+        var FixedTermDepositAccount = new FixedTermDepositAccount();
+
+        FixedTermDepositAccount.Deposit(2000);
+        FixedTermDepositAccount.Withdraw(1500);
+        
         Console.ReadKey();
     }
 

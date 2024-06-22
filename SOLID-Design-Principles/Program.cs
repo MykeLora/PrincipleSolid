@@ -3,12 +3,11 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        Vehicles vehicle = new GasolineVehicle();
-        vehicle.StartEngine();
+        Animal animal = new Dot();
+        animal.MakeSound();
 
-        vehicle  = new ElectrictVehicle();
-        vehicle.StartEngine();
-
+        animal = new Cat();
+        animal.MakeSound();
 
         Console.ReadKey();
     }

@@ -3,11 +3,12 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        Animal animal = new Dot();
-        animal.MakeSound();
+        EditableDocument editable = new EditableDocument();
+        editable.Write("Editable Content");
+        editable.Read();
 
-        animal = new Cat();
-        animal.MakeSound();
+        ReadOnlyDocument read = new ReadOnlyDocument("Read-Only Content");
+        read.Read();
 
         Console.ReadKey();
     }

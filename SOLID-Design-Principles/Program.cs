@@ -1,17 +1,21 @@
 ﻿using System;
 public class Program
 {
-    public static void DisplayBonus(IBonusProvider bonusProvider)
-    {
-        Console.WriteLine($"Bonus: {bonusProvider.CalculateBonus()}");
-    }
 
     public static void Main(string[] args)
     {
-        
-       Employees emp = new Employees{Salary = 5000};
-       DisplayBonus(emp);
+        HPLaserJetPrinter hPLaser = new HPLaserJetPrinter();
 
+        hPLaser.Print("Printing");
+        hPLaser.Scan("Scannig");
+        hPLaser.Fax("Faxing");
+        hPLaser.PrintDuplex("PrintDuplex");
+
+        LiquidInkjetPrinter liquidInkjet = new LiquidInkjetPrinter();
+        
+        liquidInkjet.Print("Printing");
+        liquidInkjet.Scan("Scanning");
+        
         Console.ReadKey();
     }
 

@@ -4,20 +4,16 @@ public class Program
 
     public static void Main(string[] args)
     {
-        
-        Console.WriteLine("OnlineOrder:");
-        OnlineOrder onlineOrder = new OnlineOrder();
-        onlineOrder.ProcessOnlinePayment();
-        onlineOrder.GenerateReceipt();
 
-        Console.WriteLine("\nInHouseOrder:");
-        InHouseOrder inHouse = new InHouseOrder();
-        inHouse.PrintTicket();
+        Ebook ebook = new Ebook();
+        ebook.SetPrice(1500);
+        ebook.GetDescription();
+        ebook.Dowload();
 
-        Console.WriteLine("\nPhoneOrder:");
-        PhoneOrder phoneOrder = new PhoneOrder();
-        phoneOrder.ConfirmOverPhone();
-        
+        TShirt shirt = new TShirt();
+        shirt.SetPrice(2500);
+        shirt.GetDescription();
+        shirt.ShipTo("Address 1, City, Santo Domingo"); 
         Console.ReadKey();
     }
 

@@ -5,14 +5,21 @@ public class Program
     public static void Main(string[] args)
     {
         
-        AdminUser adminUser = new AdminUser();
-        adminUser.CreateDocument("Text Document");
-        adminUser.ReadDocument(1);
-        adminUser.UpdateDocument(1, "Updating the Content");
-        adminUser.DeleteDocument(1);
+       Television television = new Television();
+       
+       television.Play();
+       television.ConnectToWifi("MyWifi");
+       television.TurnOff();
 
-        ReadOnlyUser readOnlyUser = new ReadOnlyUser();
-        readOnlyUser.ReadDocument(1);
+        Radio radio = new Radio();
+        radio.Play();
+        radio.Tune(91.4);
+        radio.TurnOff();
+
+        SmartSpeaker smartSpeaker = new SmartSpeaker();
+        smartSpeaker.Play();
+        smartSpeaker.ConnectToWifi("MyWifi");
+        smartSpeaker.TurnOff();
 
         Console.ReadKey();
     }

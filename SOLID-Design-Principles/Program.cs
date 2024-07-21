@@ -4,23 +4,11 @@ public class Program
 
     public static void Main(string[] args)
     {
+        var consoleLogger = new ConsoleLogger();
+        var NotificationService1 = new NotificationService(consoleLogger);
         
-       Television television = new Television();
-       
-       television.Play();
-       television.ConnectToWifi("MyWifi");
-       television.TurnOff();
-
-        Radio radio = new Radio();
-        radio.Play();
-        radio.Tune(91.4);
-        radio.TurnOff();
-
-        SmartSpeaker smartSpeaker = new SmartSpeaker();
-        smartSpeaker.Play();
-        smartSpeaker.ConnectToWifi("MyWifi");
-        smartSpeaker.TurnOff();
-
+        var fileLoger = new FileLoger("path_to_log_file.txt");
+        var notificationService2 = new NotificationService(fileLoger);
         Console.ReadKey();
     }
 

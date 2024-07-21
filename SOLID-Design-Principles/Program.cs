@@ -4,11 +4,14 @@ public class Program
 
     public static void Main(string[] args)
     {
-        var consoleLogger = new ConsoleLogger();
-        var NotificationService1 = new NotificationService(consoleLogger);
+        var creditCardPayment = new CreditCard();
+        var paymentProcessor1 = new PaymentProcesor(creditCardPayment);
+        paymentProcessor1.ExecutePayment(100m);
         
-        var fileLoger = new FileLoger("path_to_log_file.txt");
-        var notificationService2 = new NotificationService(fileLoger);
+        var paypalPayment = new PayPal();
+        var paymentProcesor2 = new PaymentProcesor(paypalPayment);
+        paymentProcesor2.ExecutePayment(300m);
+                
         Console.ReadKey();
     }
 

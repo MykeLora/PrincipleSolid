@@ -1,7 +1,6 @@
 public class PaymentProcessor
 {
     private readonly IPaymentStrategy paymentStrategy;
-
     public PaymentProcessor(IPaymentStrategy paymentStrategy)
     {
         this.paymentStrategy = paymentStrategy;
